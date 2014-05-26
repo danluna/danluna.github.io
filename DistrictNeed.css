@@ -1,0 +1,30 @@
+.bar0 {
+  fill: steelblue;
+}
+
+.bar1 {
+	fill: red;
+}
+
+.yAxisLabel {
+	font: 17px sans-serif;
+}
+
+.xAxisLabels {
+	font: 17px sans-serif;
+}
+
+.axis {
+  font: 15px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
