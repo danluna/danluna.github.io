@@ -6,6 +6,10 @@
 	fill: red;
 }
 
+.yLabel {
+	font: 17px sans-serif;
+}
+
 .bar0:hover {
   fill: gray;
 }
