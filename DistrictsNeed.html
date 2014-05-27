@@ -9,8 +9,6 @@
 
 <body height="1280px" width="1104px">
 
-	
-
 	<script>
 		var dataArray = [1523, 605];
 		var need = ["OK", "Need Attention"];
@@ -18,8 +16,8 @@
 		// Array of random numbers while we sync with backend
 		var min = 0, max = 100, upTo = 36, i;
 
-		var margin = {top: 20, bottom: 80, left: 50, right: 10},
-		width = 500,
+		var margin = {top: 20, bottom: 80, left: 70, right: 10},
+		width = 480,
 		height = 500,
 		chartWidth = width - margin.left - margin.right,
 		chartHeight = height - margin.top - margin.bottom;
@@ -52,6 +50,13 @@
 
 		// Append graph items to svg canvas
 
+		canvas.append("text")
+			.attr("class", "yLabel")
+			.attr("x", -240)
+			.attr("y", -54)
+			.attr("transform", "rotate(-90)")
+			.text("Number of Facilities");
+
 		canvas.append("g")
 			.attr("class", "x axis")
 			.attr("transform", "translate(0, " + chartHeight + ")")
@@ -63,13 +68,6 @@
 		canvas.append("g")
 			.attr("class", "y axis")
 			.call(yAxis)
-			.append("text")
-				.attr("class", "yAxisLabel")
-				.attr("transform", "rotate(-90)")
-				.attr("y", 5)
-				.attr("dy", ".71em")
-				.style("text-anchor", "end")
-				.text("Number of Facilities");
 
 		var bars = canvas.selectAll(".bar")
 				.data(dataArray)

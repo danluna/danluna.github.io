@@ -23,8 +23,8 @@
 			dataArray.push(Math.random()*500);
 		}
 
-		var margin = {top: 20, bottom: 120, left: 40, right: 10},
-		width = 555,
+		var margin = {top: 20, bottom: 120, left: 60, right: 10},
+		width = 545,
 		height = 500,
 		chartWidth = width - margin.left - margin.right,
 		chartHeight = height - margin.top - margin.bottom;
@@ -58,6 +58,13 @@
 		// Append graph items to svg canvas
 
 		canvas.append("text")
+			.attr("class", "yLabel")
+			.attr("x", -240)
+			.attr("y", -48)
+			.attr("transform", "rotate(-90)")
+			.text("Number of Refrigerators");
+
+		canvas.append("text")
 			.attr("class", "xAxisLabel")
 			.attr("x", 180)
 			.attr("y", 405)
@@ -72,13 +79,6 @@
 		canvas.append("g")
 			.attr("class", "y axis")
 			.call(yAxis)
-			.append("text")
-				.attr("class", "yAxisLabel")
-				.attr("transform", "rotate(-90)")
-				.attr("y", 2)
-				.attr("dy", ".71em")
-				.style("text-anchor", "end")
-				.text("Refrigerator Count");
 
 		var bars = canvas.selectAll(".bar")
 				.data(dataArray)

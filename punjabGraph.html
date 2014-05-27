@@ -35,8 +35,8 @@
 			dataArray.push(Math.random());
 		}
 
-		var margin = {top: 20, bottom: 120, left: 50, right: 10},
-		width = 555,
+		var margin = {top: 20, bottom: 120, left: 60, right: 10},
+		width = 510,
 		height = 500,
 		chartWidth = width - margin.left - margin.right,
 		chartHeight = height - margin.top - margin.bottom;
@@ -69,6 +69,13 @@
 
 		// Append graph items to svg canvas
 
+		canvas.append("text")
+			.attr("class", "yLabel")
+			.attr("x", -240)
+			.attr("y", -48)
+			.attr("transform", "rotate(-90)")
+			.text("Refrigerator Deficiency");
+
 		canvas.append("g")
 			.attr("class", "x axis")
 			.attr("transform", "translate(0, " + chartHeight + ")")
@@ -84,12 +91,6 @@
 		canvas.append("g")
 			.attr("class", "y axis")
 			.call(yAxis)
-			.append("text")
-				.attr("transform", "rotate(-90)")
-				.attr("y", 3)
-				.attr("dy", ".71em")
-				.style("text-anchor", "end")
-				.text("Refrigerator Deficiency %");
 
 		var bars = canvas.selectAll(".bar")
 				.data(dataArray)
@@ -100,6 +101,7 @@
 				.attr("y", function (d) {return yPos(d); })
 				.attr("height", function(d) { return chartHeight - yPos(d); })
 				.attr("fill", "blue");
+
 
 
 

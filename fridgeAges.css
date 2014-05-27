@@ -3,7 +3,7 @@
 }
 
 .bar:hover {
-  fill: red;
+  fill: gray;
 }
 
 .axis {
@@ -19,8 +19,4 @@
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
 }

@@ -6,6 +6,14 @@
 	fill: red;
 }
 
+.bar0:hover {
+  fill: gray;
+}
+
+.bar1:hover {
+  fill: gray;
+}
+
 .yAxisLabel {
 	font: 17px sans-serif;
 }
@@ -23,8 +31,4 @@
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
 }
